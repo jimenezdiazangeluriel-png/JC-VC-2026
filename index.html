@@ -20,6 +20,7 @@
             max-width: 900px;
             padding: 20px;
             box-sizing: border-box;
+            text-align: center;
         }
 
         video {
@@ -29,28 +30,59 @@
             border-radius: 8px;
         }
 
+        button {
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        button:hover {
+            background-color: #333333;
+        }
+
         iframe {
             width: 100%;
             height: 800px;
             border: none;
             border-radius: 8px;
+            display: none; /* oculto al inicio */
         }
     </style>
+
+    <script>
+        function mostrarFormulario() {
+            document.getElementById("formulario").style.display = "block";
+            document.getElementById("botonFormulario").style.display = "none";
+        }
+    </script>
 </head>
 <body>
 
     <div class="contenedor">
+
         <!-- VIDEO -->
         <video controls>
             <source src="video.mp4" type="video/mp4">
             Tu navegador no soporta la reproducción de video.
         </video>
 
+        <!-- BOTÓN -->
+        <button id="botonFormulario" onclick="mostrarFormulario()">
+            FORMULARIO
+        </button>
+
         <!-- FORMULARIO -->
         <iframe 
+            id="formulario"
             src="https://forms.gle/KMQuL3jibLfGRddEA"
             loading="lazy">
         </iframe>
+
     </div>
 
 </body>
