@@ -4,84 +4,64 @@
     <meta charset="UTF-8">
     <title>Video y Formulario</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <style>
         body {
+            background-color: white;
             margin: 0;
-            padding: 0;
-            background-color: #ffffff;
             font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            justify-content: center;
+            text-align: center;
         }
 
-        .contenedor {
-            width: 100%;
+        .container {
+            width: 90%;
             max-width: 900px;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
+            margin: auto;
+            padding-top: 30px;
         }
 
         video {
             width: 100%;
-            height: auto;
-            margin-bottom: 30px;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
         }
 
-        button {
-            background-color: #000000;
-            color: #ffffff;
-            border: none;
+        .boton {
+            margin-top: 40px;
+        }
+
+        .boton a {
+            background-color: #000;
+            color: white;
             padding: 15px 30px;
+            text-decoration: none;
             font-size: 18px;
-            cursor: pointer;
-            border-radius: 6px;
-            margin-bottom: 25px;
-        }
-
-        button:hover {
-            background-color: #333333;
-        }
-
-        iframe {
-            width: 100%;
-            height: 800px;
-            border: none;
             border-radius: 8px;
-            display: none; /* oculto al inicio */
+            transition: 0.3s;
+        }
+
+        .boton a:hover {
+            background-color: #444;
         }
     </style>
-
-    <script>
-        function mostrarFormulario() {
-            document.getElementById("formulario").style.display = "block";
-            document.getElementById("botonFormulario").style.display = "none";
-        }
-    </script>
 </head>
+
 <body>
 
-    <div class="contenedor">
+    <div class="container">
 
-        <!-- VIDEO -->
+        <!-- VIDEO ARRIBA -->
         <video controls>
             <source src="video.mp4" type="video/mp4">
-            Tu navegador no soporta la reproducción de video.
+            Tu navegador no soporta el video.
         </video>
 
-        <!-- BOTÓN -->
-        <button id="botonFormulario" onclick="mostrarFormulario()">
-            FORMULARIO
-        </button>
-
-        <!-- FORMULARIO -->
-        <iframe 
-            id="formulario"
-            src="https://forms.gle/KMQuL3jibLfGRddEA"
-            loading="lazy">
-        </iframe>
+        <!-- BOTÓN FORMULARIO -->
+        <div class="boton">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9xS-fWCx4HdPz9dFbMpVMrAtebcfoTJyNhzY4-FL8yeDt8g/viewform" target="_blank">
+                Formulario
+            </a>
+        </div>
 
     </div>
 
